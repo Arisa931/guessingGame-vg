@@ -1,1 +1,2 @@
 status=feature A and feature B
+rebase=main branch
