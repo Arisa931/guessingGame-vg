@@ -1,0 +1,23 @@
+VG – Git merge och git rebase
+
+Skillnaden mellan merge och rebase
+
+git merge integrerar ändringar från en annan branch i den aktuellla branchen. Om brancherna har utvecklats separat skapar merge ofta en merge-commit. Fördelen är att historiken visar hur utvecklingslinjerna möttes och bevarar sammanhanget mellan brancherna. Nackdelen är att historiken kan bli mer komplex.
+
+git rebase flyttar eller spelar upp commits från en branch ovanpå en annan bas. Det kan ge en rakare och lättareläst historik. Nackdelen är att commit-historiken skrivs om, vilket kan skapa problem om andra redan använder de gamla commitsen.
+
+När passar metoderna?
+
+Merge passar när man vill integrera en feature branch och bevara historiken över hur arbetet sammanfördes, särskilt i samarbete med andra.
+
+Rebase passar när man vill uppdatera en lokal feature branch med de senaste ändringarna från main och få en renare historik. Man bör undvika att rebase:a commits som andra redan bygger sitt arbete på, om man inte har samordnat det.
+
+Konflikter
+
+En konflikt uppstår när Git inte automatiskt kan kombinera ändringar, till exempel när två brancher ändrar samma rad. Jag öppnar den berörda filen, väljer vilket innehåll som ska behållas och tar bort konfliktmarkörerna (<<<<<<<, ======= och >>>>>>>). Sedan testar jag filen och fortsätter merge eller rebase enligt Git-kommandots instruktioner.
+
+Mina tester
+
+I mitt repo har jag brancherna feature-a, feature-b och feature-rebase. Jag har löst en merge-konflikt mellan feature brancherna och en rebase-konflikt på feature-rebase. Jag använde git log --oneline --graph --all för att visa historiken.
+
+Min historik visar att merge bevarade en förgrening och en merge-commit. Rebase-grenen har commits ovanpå main, vilket ger en rakare historik. Jag pushade brancherna till GitHub så att historiken kan granskas.
