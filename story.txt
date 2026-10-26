@@ -1,1 +1,1 @@
-status=feature A
+status=feature A and feature B
