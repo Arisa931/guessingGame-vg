@@ -1,6 +1,3 @@
 status=feature A and feature B
-<<<<<<< HEAD
 rebase=main branch
-=======
 rebase=feature branch
->>>>>>> 83c1fa7 (Add change on feature rebase)
